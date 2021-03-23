@@ -1,0 +1,25 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page | Django</title>
+    <link rel="stylesheet" href="{% static 'index1.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <form action="verification_page" method="POST">
+            {% csrf_token %}
+            <p><label>UserName: </label><input type="text" name="name" required></p>
+            <p><label>PassWord: </label><input type="password" name="pass" required></p>
+            <button type="submit">LogIn</button>
+        </form>
+    </div>
+</body>
+
+</html>

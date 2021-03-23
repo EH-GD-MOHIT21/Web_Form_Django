@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reg Form | Django</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="{% static 'index.js' %}"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Contact Form</h1>
+            <p>The greatest glory in living lies not in never falling, but in rising every time we fall</p>
+            <hr>
+        </div>
+
+        <div class="footer">
+            <form action="registeruser" method="POST" onsubmit="return validate();">
+                {% csrf_token %}
+                <p><label id="kuch">Name: </label><input type="text" id="name" name="name" required></p>
+                <p><label>Entry No: </label><input type="text" name="entry" required></p>
+                <p><label>Mail id: </label><input type="email" id="mail" name="mail" required></p>
+                <button type="button" onclick="handler()">Generate OTP</button>
+                <p><label>Username: </label><input type="text" name="uname" required></p>
+                <p><label>Password: </label><input type="password" id="pass" name="pass" required></p>
+                <p><label>Confirm Password: </label><input type="password" id="pass1" required></p>
+                <p><label>Age: </label><input type="number" id="age" name="age" required></p>
+                <p><label>DoB: </label><input type="date" id="dob" name="dob" required></p>
+                <p><label>OTP: </label><input type="number" id="otp" required></p>
+                <button type="submit" id="submit">Validate</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="foot">
+        Designed by Mohit | Copyright &copy; All Rights Reserved
+    </footer>
+</body>
+
+</html>
